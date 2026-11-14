@@ -655,6 +655,48 @@
       white-space: nowrap;
     }
 
+    /* ============ Free app ============ */
+    .app { padding: 0 0 clamp(3.5rem, 8vw, 6rem); }
+    .app-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      padding: clamp(1.6rem, 4vw, 2.6rem);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(1.4rem, 3.5vw, 2.4rem);
+      align-items: center;
+    }
+    .app-icon {
+      width: 96px; height: 96px;
+      flex: 0 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 32px -14px rgba(26, 42, 108, 0.55);
+    }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .app-copy h2 { margin: 0 0 0.35rem; }
+    .app-eyebrow {
+      margin: 0 0 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--body-soft);
+    }
+    .app-copy p.app-blurb {
+      margin: 0 0 1.15rem;
+      font-size: 1.05rem;
+      color: var(--body);
+      max-width: 42rem;
+    }
+    .app-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.3rem; }
+    @media (max-width: 640px) {
+      .app-card { grid-template-columns: 1fr; text-align: left; }
+      .app-icon { width: 80px; height: 80px; border-radius: 22px; }
+    }
+
     /* ============ Author ============ */
     .author { padding: clamp(3.5rem, 8vw, 6rem) 0; }
     .author-grid {
@@ -1227,6 +1269,29 @@
       </div>
     </section>
 
+    <!-- ============ Free app ============ -->
+    <section class="app" id="app" aria-label="Physio Student Companion app">
+      <div class="wrap">
+        <div class="app-card">
+          <div class="app-icon">
+            <img src="assets/8c7cc03ea650.png" alt="Physio Student Companion app icon — dark teal square with a white cross and a small orange dot" width="192" height="192" />
+          </div>
+          <div class="app-copy">
+            <p class="app-eyebrow">Free app</p>
+            <h2>Physio Student Companion</h2>
+            <p class="app-blurb">Exam guides, muscle anatomy, exercise library, pocket tools and viva revision — all in one app, fully offline, no account, no ads. Free for every physiotherapy student.</p>
+            <div class="app-tags" aria-hidden="true">
+              <span class="tag">Free</span><span class="tag">Fully offline</span><span class="tag">No account</span><span class="tag">No ads</span><span class="tag">Android</span>
+            </div>
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.gabriellapress.physiocompanion" target="_blank" rel="noopener">
+              Get it on Google Play
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ Book videos ============ -->
     <section class="videos" id="videos" aria-label="Book videos">
       <div class="wrap">
@@ -1606,7 +1671,11 @@
           author: "by Dr. Ashish Gummadi (M.P.T) B.P.T C.M.C Vellore",
           blurb: "Foundations, interventions, and practice for physio students: 50 chapters in 5 parts and around 50,000 words on community physiotherapy — health, disability, rehabilitation, and care where people actually live.",
           tags: ["Paperback", "Kindle", "Pothi"],
-          links: [{ label: "Find it on Amazon", url: AMAZON_AUTHOR }]
+          links: [
+            { label: "Print edition on Pothi", url: "https://store.pothi.com/book/drashish-gummadi-the-community-companion-community-physiotherapy/" },
+            { label: "E-book on Pothi", url: "https://store.pothi.com/book/ebook-dr-ashish-gummadi-the-community-companion-community-physiotherapy/" },
+            { label: "Find it on Amazon", url: AMAZON_AUTHOR }
+          ]
         }
       };
 
